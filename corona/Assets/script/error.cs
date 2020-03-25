@@ -14,9 +14,12 @@ public class error : MonoBehaviour
     public bool istouchground;
     private bool flipright;
 
+    public Animator anim;
+
     void Start()
     {
         flipright = true;
+       
     }
 
 
@@ -26,9 +29,13 @@ public class error : MonoBehaviour
         movement = Input.GetAxis("Horizontal");
         if (movement != 0 )
         {
-
+            anim.SetBool("run", true);
             RigidBody.velocity = new Vector2(movement * speed, RigidBody.velocity.y);
             flip(movement);
+        }
+        else
+        {
+            anim.SetBool("run", false);
         }
         if (Input.GetButton("Jump") && istouchground)
         {
