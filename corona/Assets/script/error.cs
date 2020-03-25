@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playermove : MonoBehaviour
+public class error : MonoBehaviour
 {
     public float speed = 5f;
     public float jump = 8f;
@@ -24,7 +24,7 @@ public class playermove : MonoBehaviour
     {
         istouchground = Physics2D.OverlapCircle(groundcheckpoint.position, radius, groundlayer);
         movement = Input.GetAxis("Horizontal");
-        if (movement != 0)
+        if (movement != 0 )
         {
 
             RigidBody.velocity = new Vector2(movement * speed, RigidBody.velocity.y);
